@@ -15,7 +15,7 @@ Requires: pypi-molecule-license = %{version}-%{release}
 Requires: pypi-molecule-python = %{version}-%{release}
 Requires: pypi-molecule-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pluggy
+BuildRequires : pypi(pluggy)
 BuildRequires : py-python
 BuildRequires : pypi(ansible_compat)
 BuildRequires : pypi(cerberus)
@@ -37,7 +37,7 @@ BuildRequires : pypi(subprocess_tee)
 BuildRequires : pypi(wheel)
 BuildRequires : pytest
 BuildRequires : tox
-BuildRequires : virtualenv
+BuildRequires : pypi(virtualenv)
 
 %description
 ****************
