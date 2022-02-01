@@ -4,7 +4,7 @@
 #
 Name     : pypi-molecule
 Version  : 3.5.2
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/0a/b8/d906a7f1248b047f8a482712da00c18c300cc43a8bdc0fc583510766854d/molecule-3.5.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/0a/b8/d906a7f1248b047f8a482712da00c18c300cc43a8bdc0fc583510766854d/molecule-3.5.2.tar.gz
 Summary  : Molecule aids in the development and testing of Ansible roles
@@ -15,29 +15,32 @@ Requires: pypi-molecule-license = %{version}-%{release}
 Requires: pypi-molecule-python = %{version}-%{release}
 Requires: pypi-molecule-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(pluggy)
-BuildRequires : py-python
 BuildRequires : pypi(ansible_compat)
 BuildRequires : pypi(cerberus)
 BuildRequires : pypi(click)
 BuildRequires : pypi(click_help_colors)
 BuildRequires : pypi(cookiecutter)
+BuildRequires : pypi(dataclasses)
 BuildRequires : pypi(enrich)
+BuildRequires : pypi(importlib_metadata)
 BuildRequires : pypi(jinja2)
 BuildRequires : pypi(packaging)
 BuildRequires : pypi(paramiko)
 BuildRequires : pypi(pip)
 BuildRequires : pypi(pluggy)
+BuildRequires : pypi(py)
 BuildRequires : pypi(pyyaml)
 BuildRequires : pypi(rich)
+BuildRequires : pypi(selinux)
 BuildRequires : pypi(setuptools)
 BuildRequires : pypi(setuptools_scm)
 BuildRequires : pypi(setuptools_scm_git_archive)
 BuildRequires : pypi(subprocess_tee)
 BuildRequires : pypi(wheel)
-BuildRequires : pytest
-BuildRequires : tox
-BuildRequires : pypi(virtualenv)
+BuildRequires : pypi-pluggy
+BuildRequires : pypi-pytest
+BuildRequires : pypi-tox
+BuildRequires : pypi-virtualenv
 
 %description
 ****************
@@ -83,7 +86,9 @@ Requires: pypi(cerberus)
 Requires: pypi(click)
 Requires: pypi(click_help_colors)
 Requires: pypi(cookiecutter)
+Requires: pypi(dataclasses)
 Requires: pypi(enrich)
+Requires: pypi(importlib_metadata)
 Requires: pypi(jinja2)
 Requires: pypi(packaging)
 Requires: pypi(paramiko)
@@ -106,7 +111,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639062580
+export SOURCE_DATE_EPOCH=1643757252
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -116,6 +121,8 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
+pypi-dep-fix.py . cerberus
+pypi-dep-fix.py . PyYAML
 python3 -m build --wheel --skip-dependency-check --no-isolation
 
 %install
@@ -124,6 +131,8 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-molecule
 cp %{_builddir}/molecule-3.5.2/LICENSE %{buildroot}/usr/share/package-licenses/pypi-molecule/82314adfc4f5f364b3443f5df8a3393fd2121964
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
+pypi-dep-fix.py %{buildroot} cerberus
+pypi-dep-fix.py %{buildroot} PyYAML
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
