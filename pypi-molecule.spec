@@ -4,7 +4,7 @@
 #
 Name     : pypi-molecule
 Version  : 3.6.1
-Release  : 7
+Release  : 8
 URL      : https://files.pythonhosted.org/packages/3e/34/df573d20078d2056c90b0f7ddf8f43cd06da830a5e87881c6f415877a1a1/molecule-3.6.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3e/34/df573d20078d2056c90b0f7ddf8f43cd06da830a5e87881c6f415877a1a1/molecule-3.6.1.tar.gz
 Summary  : Molecule aids in the development and testing of Ansible roles
@@ -220,7 +220,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644890416
+export SOURCE_DATE_EPOCH=1649787643
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
