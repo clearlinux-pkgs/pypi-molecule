@@ -4,7 +4,7 @@
 #
 Name     : pypi-molecule
 Version  : 4.0.0
-Release  : 10
+Release  : 11
 URL      : https://files.pythonhosted.org/packages/45/e0/18c5b853be933b9704a21f376c9eda597b8f478a481187a52fba91791194/molecule-4.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/45/e0/18c5b853be933b9704a21f376c9eda597b8f478a481187a52fba91791194/molecule-4.0.0.tar.gz
 Summary  : Molecule aids in the development and testing of Ansible roles
@@ -218,7 +218,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1655394075
+export SOURCE_DATE_EPOCH=1656388847
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -262,7 +262,7 @@ export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
 pip install --root=%{buildroot}-v3 --no-deps --ignore-installed dist/*.whl
 popd
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
