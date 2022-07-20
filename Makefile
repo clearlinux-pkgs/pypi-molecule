@@ -1,5 +1,5 @@
 PKG_NAME := pypi-molecule
-URL = https://files.pythonhosted.org/packages/45/e0/18c5b853be933b9704a21f376c9eda597b8f478a481187a52fba91791194/molecule-4.0.0.tar.gz
+URL = https://files.pythonhosted.org/packages/d0/5b/efe2361c64ce052a96ce8c86d287592e55ed8ab2af726bffe4cbb3030469/molecule-4.0.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
