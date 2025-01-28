@@ -6,10 +6,10 @@
 # autospec commit: 94c6be0
 #
 Name     : pypi-molecule
-Version  : 25.1.0
-Release  : 37
-URL      : https://files.pythonhosted.org/packages/a0/26/bfeca24fbfbdf12be51a8cc25f51585b47a972162f392737bc909f40f763/molecule-25.1.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/a0/26/bfeca24fbfbdf12be51a8cc25f51585b47a972162f392737bc909f40f763/molecule-25.1.0.tar.gz
+Version  : 25.2.0
+Release  : 38
+URL      : https://files.pythonhosted.org/packages/2e/a6/d8f507bedf42a88eb96e10a34cfd93f7266fa29363e76a8c49aa729f7b21/molecule-25.2.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/2e/a6/d8f507bedf42a88eb96e10a34cfd93f7266fa29363e76a8c49aa729f7b21/molecule-25.2.0.tar.gz
 Summary  : Molecule aids in the development and testing of Ansible roles
 Group    : Development/Tools
 License  : MIT
@@ -83,10 +83,10 @@ python3 components for the pypi-molecule package.
 
 
 %prep
-%setup -q -n molecule-25.1.0
-cd %{_builddir}/molecule-25.1.0
+%setup -q -n molecule-25.2.0
+cd %{_builddir}/molecule-25.2.0
 pushd ..
-cp -a molecule-25.1.0 buildavx2
+cp -a molecule-25.2.0 buildavx2
 popd
 
 %build
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1737496246
+export SOURCE_DATE_EPOCH=1738078665
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
