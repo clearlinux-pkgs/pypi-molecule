@@ -7,7 +7,7 @@
 #
 Name     : pypi-molecule
 Version  : 25.2.0
-Release  : 38
+Release  : 39
 URL      : https://files.pythonhosted.org/packages/2e/a6/d8f507bedf42a88eb96e10a34cfd93f7266fa29363e76a8c49aa729f7b21/molecule-25.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2e/a6/d8f507bedf42a88eb96e10a34cfd93f7266fa29363e76a8c49aa729f7b21/molecule-25.2.0.tar.gz
 Summary  : Molecule aids in the development and testing of Ansible roles
